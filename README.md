@@ -55,8 +55,6 @@
     Configuration
     
     1. Configure Router NY
-    cisco
-
     enable
     configure terminal
 
@@ -80,7 +78,6 @@
     Explanation: NY knows its directly connected networks but needs a static route to reach the remote 192.168.30.0/24 LAN. Traffic for that network is forwarded to LA at 192.168.20.2.
     
     2. Configure Router LA
-    cisco
 
     enable
     configure terminal
@@ -109,14 +106,12 @@
     In Cisco Packet Tracer, open each PC and navigate to Desktop → IP Configuration.
 
     PC0
-    text
 
     IP Address:      192.168.10.10
     Subnet Mask:     255.255.255.0
     Default Gateway: 192.168.10.1
 
     PC2
-    text
 
     IP Address:      192.168.30.10
     Subnet Mask:     255.255.255.0
@@ -127,7 +122,6 @@
     1. Verify interface status
 
     Run on both routers:
-    cisco
 
     show ip interface brief
 
@@ -135,22 +129,20 @@
     2. Verify the routing table
 
     On NY:
-    cisco
-
-    show ip route
+show ip route
 
     Expected static route:
-    text
+
 
     S    192.168.30.0/24 [1/0] via 192.168.20.2
 
     On LA:
-    cisco
+    
 
     show ip route
 
     Expected static route:
-    text
+
 
     S    192.168.10.0/24 [1/0] via 192.168.20.1
 
@@ -179,7 +171,7 @@
     During configuration, an incorrect next-hop address was initially entered on NY. The route was corrected to use LA's transit address, 192.168.20.2.
 
     Useful troubleshooting commands include:
-    cisco
+    
 
     show ip interface brief
     show ip route
@@ -202,16 +194,9 @@
         The role of next-hop IP addresses in route selection.
         The importance of return routes for two-way communication.
         The relationship between host default gateways and inter-network communication.
-        Using routing tables and ICMP ping to validate network connectivity.
-        
-    Repository Structure
+        Using routing tables and ICMP ping to validate network connectivity
 
-    static-routing-homelab/
-    ├── README.md
-    ├── packet-tracer/
-    │   └── static-routing-homelab.pkt
-    └── images/
-        └── static-routing-topology.png
+    static-routing-configuration
 
     Tools Used
         Cisco Packet Tracer
